@@ -16,12 +16,35 @@ ${SELENIUM_GRID_URL}      http://localhost:4444
 
 *** Test Cases ***
 A person should be able to visualize more than one project on home page
-    [Documentation]    Given a person accessing Demo Blaze \n
-    ...                When home page is displayed \n
+    [Documentation]    Given a person accessing Demo Blaze
+    ...                When home page is displayed
     ...                Then should display one or more items
     [Setup]    Open Browser
     ...  url=${SUT_URL}
     ...  browser=${BROWSER}
     ...  remote_url=${SELENIUM_GRID_URL}
     Maximize Browser Window
+    Wait Until Page Contains Element    css:div#contcont div.card
+    [Teardown]    Close Browser
+
+A person should be able to view item details
+    [Documentation]    Given a person accessing Demo Blaze
+    ...                When home page is displayed
+    ...                And click over an item
+    ...                Then item details should appear
+    [Setup]    Open Browser
+    ...  url=${SUT_URL}
+    ...  browser=${BROWSER}
+    ...  remote_url=${SELENIUM_GRID_URL}
+    Maximize Browser Window
+    Wait Until Element Is Visible    css:div#contcont div.card
+    ${product_title}    Get Text
+    ...  xpath:(//div[@id="tbodyid"]/div/div[contains(@class, "card")])[1]/a
+    ${product_url}    Get Element Attribute
+    ...  xpath:(//div[@id="tbodyid"]/div/div[contains(@class, "card")])[1]/a
+    ...  href
+    Click Element    xpath:(//div[@id="tbodyid"]/div/div[contains(@class, "card")])[1]/a
+    Wait Until Location Contains    ${product_url}
+    Wait Until Element Is Visible    css:div#tbodyid h2
+    Element Should Contain    css:div#tbodyid h2    ${product_title}
     [Teardown]    Close Browser

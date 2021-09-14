@@ -9,7 +9,7 @@ Documentation     Visualization of producs.
 
 
 *** Variables ***
-${SUT_URL}                https://www.demoblaze.com/ 
+${SUT_URL}                https://www.demoblaze.com/
 ${BROWSER}                chrome
 ${SELENIUM_GRID_URL}      http://localhost:4444
 

@@ -10,5 +10,5 @@ Open this folder on your terminal and use:
 `robot -d ${PATH_OF_EXECUTION_OUTPUT} ${PATH_TO_YOUR_ROBOT_TEST_FILE} `
 
 Replacing:
-- PATH_TO_YOUR_ROBOT_TEST_FILE: relative path to your robot test file. (E.g. `atest\sample\tests.robot`)
+- PATH_TO_YOUR_ROBOT_TEST_FILE: relative path to your robot test file. (E.g. `atest\products\visualization.robot`)
 - PATH_OF_EXECUTION_OUTPUT: relative|absolute path where the execution output should be stored. (E.g. `output\sample`)

@@ -7,8 +7,18 @@ Once you have it, run `pip install -r requirements.txt`.
 
 Open this folder on your terminal and use: 
 
-`robot -d ${PATH_OF_EXECUTION_OUTPUT} ${PATH_TO_YOUR_ROBOT_TEST_FILE} `
+`robot -d ${PATH_OF_EXECUTION_OUTPUT} ${PATH_TO_YOUR_ROBOT_TEST_FILE}`
 
 Replacing:
-- PATH_TO_YOUR_ROBOT_TEST_FILE: relative path to your robot test file. (E.g. `atest\products\visualization.robot`)
-- PATH_OF_EXECUTION_OUTPUT: relative|absolute path where the execution output should be stored. (E.g. `output\sample`)
+- `${PATH_TO_YOUR_ROBOT_TEST_FILE}`: relative path to your robot test file. (E.g. `atest\products\visualization.robot`)
+- `${PATH_OF_EXECUTION_OUTPUT}`: relative|absolute path where the execution output should be stored. (E.g. `output\sample`)
+
+## Running by tags:
+
+Use the following:
+
+`robot -- include ${TAGNAME} -d ${PATH_OF_EXECUTION_OUTPUT} ${PATH_TO_YOUR_ROBOT_TEST_FILE}`
+
+Replacing:
+- `${TAGNAME}`: name of the tag defined in the file(s).
+
